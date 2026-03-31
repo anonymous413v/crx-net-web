@@ -4,7 +4,7 @@ import { motion, useInView, useScroll, useTransform, AnimatePresence } from 'fra
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
-import { fadeUp, stagger, slideLeft, slideRight, scaleUp, float, floatSlow, cardHover } from '../lib/motion'
+import { fadeUp, stagger, cardHover } from '../lib/motion'
 import { useCountUp } from '../hooks/useCountUp'
 
 const ParticleBackground = lazy(() => import('../components/ParticleBackground'))
@@ -307,7 +307,8 @@ export default function Home() {
                     src={DASH_IMG}
                     alt="Craxnet Dashboard"
                     className="w-full h-auto rounded-xl object-cover aspect-[16/9]"
-                    animate={float.animate}
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' } as object}
                   />
                 </motion.div>
 
@@ -319,7 +320,10 @@ export default function Home() {
                   transition={{ duration: 0.65, ease: [0.0, 0.0, 0.2, 1], delay: 0.45 }}
                   className="absolute -bottom-6 -left-2 lg:-left-6 z-10 hidden sm:flex flex-col items-center gap-1"
                 >
-                  <motion.div animate={floatSlow.animate}>
+                  <motion.div
+                    animate={{ y: [0, -7, 0] }}
+                    transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 } as object}
+                  >
                     <PhoneMockup />
                   </motion.div>
                   <span className="text-[8px] font-label uppercase tracking-widest text-on-surface-variant/50">Mobile App</span>

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
-import { fadeUp, stagger, slideLeft, slideRight, cardHover } from '../lib/motion'
+import { fadeUp, stagger, cardHover } from '../lib/motion'
 
 const team = [
   { name: 'Julian Thorne', role: 'Founder & Chief Visionary', desc: 'Pioneering the intersection of aesthetics and algorithmic intelligence for 15 years.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA-SOPx6RiPYQIX98rAn0NFxis27kjaG2HKk-IC6-qunoFQKGYBT6ETho903vBb2QDtUSi01TbcuaHTRXs9BGPOzqTsJCuDVo6bu78KSHk_9KLqdRd4bCvpN2hzlBF2QvrZVXkexF6BdRYlKzYkwOAwMaKK9YHCWd_y0ZV9fQp2U21NtzAuALuuHUQdRM47HiZORvpFBDw3j3ieTzINSi4oyKF4uVx_AgCyVKFrJE44Xua0QzeWiu9BmXk-awpr2nTRLgpJxwKc8UUC' },

@@ -1,6 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { fadeUp, stagger, slideLeft, slideRight, cardHover } from '../lib/motion'
+import { fadeUp, stagger, slideRight, cardHover } from '../lib/motion'
 
 const perks = [
   { icon: 'encrypted', title: 'Enterprise-Grade Security', desc: 'Your data is siloed, encrypted, and governed by sovereign protocols.' },
@@ -9,8 +9,6 @@ const perks = [
 ]
 
 export default function GetStarted() {
-  const navigate = useNavigate()
-
   return (
     <div className="bg-background text-on-surface font-body antialiased min-h-screen overflow-x-hidden">
 
