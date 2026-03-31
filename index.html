@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CraxNet ERP | Enterprise Intelligence Redefined</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary":                  "#556254",
+              "primary-dim":              "#4a5649",
+              "on-primary":               "#eefcea",
+              "primary-container":        "#d9e6d5",
+              "on-primary-container":     "#495548",
+              "secondary":                "#546354",
+              "secondary-container":      "#d6e7d4",
+              "on-secondary-container":   "#475547",
+              "background":               "#f9f9f7",
+              "surface":                  "#f9f9f7",
+              "surface-bright":           "#f9f9f7",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low":    "#f2f4f2",
+              "surface-container":        "#ecefec",
+              "surface-container-high":   "#e5e9e6",
+              "surface-container-highest":"#dee4e0",
+              "surface-dim":              "#d4dcd8",
+              "on-surface":               "#2d3432",
+              "on-surface-variant":       "#5a605e",
+              "on-background":            "#2d3432",
+              "outline":                  "#767c79",
+              "outline-variant":          "#adb3b0",
+              "inverse-surface":          "#0c0f0e",
+              "inverse-primary":          "#e7f5e3",
+              "tertiary":                 "#5f5f5f",
+              "tertiary-container":       "#f5f3f3",
+              "on-tertiary":              "#fbf8f8",
+              "error":                    "#9e422c",
+              "error-container":          "#fe8b70",
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body":     ["Manrope", "sans-serif"],
+              "label":    ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "0.75rem",
+              "sm":      "0.5rem",
+              "md":      "0.75rem",
+              "lg":      "1rem",
+              "xl":      "1.25rem",
+              "2xl":     "1.5rem",
+              "3xl":     "2rem",
+              "full":    "9999px",
+            },
+            spacing: {
+              "18": "4.5rem",
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* ── Fonts ── */
+      @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+      /* ── Material Icons ── */
+      .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        font-size: 24px;
+        line-height: 1;
+        vertical-align: middle;
+        display: inline-block;
+        user-select: none;
+      }
+
+      /* ── Utility classes ── */
+      .editorial-shadow  { box-shadow: 0 8px 32px rgba(45,52,50,0.08); }
+      .card-shadow       { box-shadow: 0 2px 12px rgba(45,52,50,0.06), 0 1px 3px rgba(45,52,50,0.04); }
+
+      /* ── Navbar glass ── */
+      .glass-nav {
+        background: rgba(249,249,247,0.88);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .dark .glass-nav { background: rgba(15,18,16,0.90); }
+
+      /* ── Gradients ── */
+      .bg-atrium-gradient { background: linear-gradient(135deg, #556254 0%, #3d4a3c 100%); }
+      .premium-gradient   { background: linear-gradient(135deg, #556254 0%, #3d4a3c 100%); }
+
+      /* ── Dark mode overrides ── */
+      .dark { color-scheme: dark; }
+      .dark body { background-color: #0f1210; color: #e2e8e2; }
+
+      /* Surface tokens */
+      .dark .bg-background,
+      .dark .bg-surface            { background-color: #0f1210 !important; }
+      .dark .bg-surface-container-lowest { background-color: #181d18 !important; }
+      .dark .bg-surface-container-low    { background-color: #1d2420 !important; }
+      .dark .bg-surface-container        { background-color: #232a25 !important; }
+      .dark .bg-surface-container-high   { background-color: #2a322c !important; }
+      .dark .bg-surface-container-highest{ background-color: #313b33 !important; }
+
+      /* Text tokens */
+      .dark .text-on-surface         { color: #e2e8e2 !important; }
+      .dark .text-on-surface-variant { color: #96a896 !important; }
+      .dark .text-on-background      { color: #e2e8e2 !important; }
+
+      /* Primary tokens */
+      .dark .text-primary            { color: #7a9878 !important; }
+      .dark .bg-primary              { background-color: #556254 !important; }
+      .dark .bg-primary-container    { background-color: #243324 !important; }
+      .dark .text-on-primary-container { color: #c0d4be !important; }
+
+      /* Border tokens */
+      .dark .border-outline-variant\/10 { border-color: rgba(60,76,60,0.25) !important; }
+      .dark .border-outline-variant\/15 { border-color: rgba(60,76,60,0.35) !important; }
+      .dark .border-outline-variant\/20 { border-color: rgba(60,76,60,0.40) !important; }
+      .dark .border-outline\/30         { border-color: rgba(100,120,100,0.35) !important; }
+
+      /* Inverse */
+      .dark .bg-on-surface  { background-color: #e2e8e2 !important; }
+      .dark .text-surface   { color: #0f1210 !important; }
+
+      /* Smooth theme transition */
+      *, *::before, *::after { transition: background-color 0.2s ease, border-color 0.2s ease; }
+      img, svg, button { transition: none !important; }
+    </style>
+  </head>
+  <body class="font-body antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
